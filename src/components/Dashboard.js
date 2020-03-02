@@ -7,13 +7,13 @@ import {
     TableHead,
     TableRow
 } from '@material-ui/core'
-import cars from '../cars.json' // remove this
+
 
 const Dashboard = (props) => {
     return (
         <Container maxWidth="lg" className="car-container">
             {/* Change NAME to props.user.username */}
-            <h4>Welcome, {`NAME`}</h4>
+            <h4>Welcome, {props.user.username}</h4>
             <Table>
                 <TableHead>
                     <TableRow>
@@ -31,7 +31,7 @@ const Dashboard = (props) => {
                 </TableHead>
                 <TableBody>
                 {/* Change cars to props.cars and remove the cars.json import above */}
-                {cars.map(car => (
+                {props.cars.map(car => (
                     <TableRow key={car.id}>
                         <TableCell component="th" scope="row">
                             {car.id}
